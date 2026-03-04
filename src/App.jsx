@@ -1,4 +1,11 @@
 import { useState, useRef, useEffect, useCallback } from "react";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_PUBLIC_KEY  = "6KDuFn5muG6aC2YQA";
+const EMAILJS_SERVICE_ID  = "service_30616fj";
+const EMAILJS_TEMPLATE_ID = "template_i1gwlja";
+
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
 // ─── Responsive hook ──────────────────────────────────────────────────────────
 function useWindowSize() {
@@ -1177,11 +1184,11 @@ export default function App() {
     // Template variables: to_email, client_name, client_email,
     //   client_phone, quote_summary, units_count, floor_run
     try {
-      await window.emailjs.send(
-        "YOUR_SERVICE_ID",   // <- replace with your EmailJS Service ID
-        "YOUR_TEMPLATE_ID",  // <- replace with your EmailJS Template ID
-        {
-          to_email:      "kim@hwhdesigns.co.za",
+      await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            to_email: "kim@hwhdesigns.co.za",
           client_name:   cName,
           client_email:  cEmail,
           client_phone:  cPhone || "—",
