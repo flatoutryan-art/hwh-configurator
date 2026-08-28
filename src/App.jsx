@@ -411,6 +411,190 @@ function ApplianceSVG({ unit, pxPerMm, selected }) {
   );
 }
 
+
+// ─── Footer Component ──────────────────────────────────────────────────────────
+function HWHFooter() {
+  return (
+    <footer style={{ background:"#1A1614", color:"#C8B8A8", fontFamily:"'Trebuchet MS',sans-serif", padding:"40px 24px 24px", borderTop:"3px solid #D96339" }}>
+      <div style={{ maxWidth:960, margin:"0 auto" }}>
+        {/* Logo + Nav */}
+        <div style={{ display:"flex", flexWrap:"wrap", gap:32, alignItems:"flex-start", justifyContent:"space-between", marginBottom:28 }}>
+          {/* Logo */}
+          <a href="https://hwhdesigns.co.za" rel="dofollow" style={{ textDecoration:"none", display:"flex", alignItems:"center", gap:12 }}>
+            <svg viewBox="0 0 48 16" width={48} height={16}>
+              <circle cx="8"  cy="8" r="8" fill="#D96339"/>
+              <polygon points="8,3.3 12.7,8 8,12.7 3.3,8" fill="#EBBD46"/>
+              <circle cx="8"  cy="8" r="1.8" fill="#1A1A1A"/>
+              <circle cx="24" cy="8" r="8" fill="#1A1A1A"/>
+              <polygon points="24,3.3 28.7,8 24,12.7 19.3,8" fill="#FFFFFF"/>
+              <circle cx="24" cy="8" r="1.8" fill="#D96339"/>
+              <circle cx="40" cy="8" r="8" fill="#EBBD46"/>
+              <polygon points="40,3.3 44.7,8 40,12.7 35.3,8" fill="#D96339"/>
+              <circle cx="40" cy="8" r="1.8" fill="#1A1A1A"/>
+            </svg>
+            <span style={{ fontSize:13, letterSpacing:3, color:"#F0EDE8", fontWeight:"bold", textTransform:"uppercase" }}>HWH Designs</span>
+          </a>
+          {/* Nav links */}
+          <nav style={{ display:"flex", flexWrap:"wrap", gap:"8px 24px" }}>
+            {[
+              ["Portfolio",    "https://hwhdesigns.co.za/portfolio"],
+              ["About",        "https://hwhdesigns.co.za/about"],
+              ["Services",     "https://hwhdesigns.co.za/services"],
+              ["Contact",      "https://hwhdesigns.co.za/contact"],
+              ["Meet the Team","https://hwhdesigns.co.za/meet-the-team"],
+              ["Kitchen Guide","https://hwhdesigns.co.za/kitchen-guide"],
+            ].map(([label, href]) => (
+              <a key={label} href={href} rel="dofollow"
+                style={{ color:"#C8B8A8", textDecoration:"none", fontSize:11, letterSpacing:1.5, textTransform:"uppercase",
+                  transition:"color 0.2s" }}
+                onMouseEnter={e=>e.target.style.color="#D96339"}
+                onMouseLeave={e=>e.target.style.color="#C8B8A8"}>
+                {label}
+              </a>
+            ))}
+          </nav>
+          {/* Social icons */}
+          <div style={{ display:"flex", gap:12, alignItems:"center" }}>
+            <a href="https://www.instagram.com/hwhdesigns" rel="dofollow" aria-label="HWH Designs on Instagram"
+              style={{ color:"#C8B8A8", textDecoration:"none", fontSize:20, lineHeight:1 }}
+              onMouseEnter={e=>e.target.style.color="#D96339"} onMouseLeave={e=>e.target.style.color="#C8B8A8"}>
+              <svg viewBox="0 0 24 24" width={20} height={20} fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/hwhdesigns" rel="dofollow" aria-label="HWH Designs on Facebook"
+              style={{ color:"#C8B8A8", textDecoration:"none", lineHeight:1 }}
+              onMouseEnter={e=>e.target.style.color="#D96339"} onMouseLeave={e=>e.target.style.color="#C8B8A8"}>
+              <svg viewBox="0 0 24 24" width={20} height={20} fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div style={{ borderTop:"1px solid rgba(255,255,255,0.08)", paddingTop:16, marginBottom:12 }}/>
+
+        {/* Service areas */}
+        <p style={{ fontSize:10, color:"#A09080", lineHeight:1.8, marginBottom:12 }}>
+          Proudly serving{" "}
+          {[
+            ["Johannesburg","https://hwhdesigns.co.za/kitchen-designers-johannesburg"],
+            ["Sandton",     "https://hwhdesigns.co.za/kitchen-designers-sandton"],
+            ["Bryanston",   "https://hwhdesigns.co.za/kitchen-designers-bryanston"],
+            ["Waterfall",   "https://hwhdesigns.co.za/kitchen-designers-waterfall"],
+          ].map(([city, href], i, arr) => (
+            <span key={city}>
+              <a href={href} rel="dofollow"
+                style={{ color:"#C8B8A8", textDecoration:"underline", textDecorationColor:"rgba(217,99,57,0.4)" }}>
+                {city}
+              </a>{i < arr.length-1 ? ", " : ""}
+            </span>
+          ))}
+          {" "}and surrounding Gauteng areas — custom built-in kitchens, joinery & interior design.
+        </p>
+
+        {/* Copyright */}
+        <div style={{ display:"flex", flexWrap:"wrap", gap:8, justifyContent:"space-between", alignItems:"center", fontSize:9, color:"#706050", letterSpacing:0.5 }}>
+          <span>© {new Date().getFullYear()} <a href="https://hwhdesigns.co.za" rel="dofollow" style={{ color:"#A09080", textDecoration:"none" }}>HWH Designs</a>. All rights reserved.</span>
+          <span>
+            Configurator by{" "}
+            <a href="https://revyourbusiness.co.za" rel="dofollow"
+              style={{ color:"#D96339", textDecoration:"none", fontWeight:"bold", letterSpacing:1 }}>
+              REV Improvement Consulting
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// ─── Landing Page ───────────────────────────────────────────────────────────────
+function LandingPage({ onStart }) {
+  const steps = [
+    { num:"01", icon:"📐", title:"Set Your Wall Width", body:"Enter your kitchen wall measurement in millimetres. The canvas scales to your exact space." },
+    { num:"02", icon:"🪵", title:"Place Your Cabinets", body:"Drag units from the palette onto the wall — or tap ＋ on mobile. Mix base, drawer, wall, tall and corner units. Drop appliance placeholders to visualise your space." },
+    { num:"03", icon:"🎨", title:"Choose Materials", body:"Select your carcass build, countertop type and colour from the full Quartz, Formica and Marble range." },
+    { num:"04", icon:"✨", title:"Apply Door Finishes", body:"Pick your Supamatt, Supagloss or Wood Grain door finish per cabinet — or apply one to the entire run at once." },
+    { num:"05", icon:"📋", title:"Get Your Quote", body:"Review the itemised build spec, run metres and estimated cost, then submit directly to Kim at HWH Designs." },
+  ];
+  return (
+    <div style={{ minHeight:"100vh", background:"#F2EEE8", fontFamily:"'Trebuchet MS',sans-serif", display:"flex", flexDirection:"column" }}>
+      {/* Hero */}
+      <div style={{ background:"#2A1D16", color:"#F0EDE8", padding:"48px 24px 40px", textAlign:"center", position:"relative", overflow:"hidden" }}>
+        {/* Subtle texture lines */}
+        <div style={{ position:"absolute", inset:0, backgroundImage:"repeating-linear-gradient(90deg,rgba(217,99,57,0.04) 0,rgba(217,99,57,0.04) 1px,transparent 1px,transparent 80px)", pointerEvents:"none" }}/>
+        <div style={{ position:"relative" }}>
+          <a href="https://hwhdesigns.co.za" rel="dofollow" style={{ display:"inline-flex", alignItems:"center", gap:12, textDecoration:"none", marginBottom:28 }}>
+            <svg viewBox="0 0 48 16" width={52} height={18}>
+              <circle cx="8"  cy="8" r="8" fill="#D96339"/>
+              <polygon points="8,3.3 12.7,8 8,12.7 3.3,8" fill="#EBBD46"/>
+              <circle cx="8"  cy="8" r="1.8" fill="#1A1A1A"/>
+              <circle cx="24" cy="8" r="8" fill="#1A1A1A"/>
+              <polygon points="24,3.3 28.7,8 24,12.7 19.3,8" fill="#FFFFFF"/>
+              <circle cx="24" cy="8" r="1.8" fill="#D96339"/>
+              <circle cx="40" cy="8" r="8" fill="#EBBD46"/>
+              <polygon points="40,3.3 44.7,8 40,12.7 35.3,8" fill="#D96339"/>
+              <circle cx="40" cy="8" r="1.8" fill="#1A1A1A"/>
+            </svg>
+            <span style={{ fontSize:11, letterSpacing:4, color:"#C8B8A8", textTransform:"uppercase" }}>HWH Designs</span>
+          </a>
+          <h1 style={{ fontSize:"clamp(22px,5vw,38px)", fontWeight:"bold", letterSpacing:1, marginBottom:12, lineHeight:1.2 }}>
+            Kitchen Cabinet Configurator
+          </h1>
+          <p style={{ fontSize:"clamp(12px,2.5vw,15px)", color:"#C8B8A8", maxWidth:540, margin:"0 auto 32px", lineHeight:1.7 }}>
+            Design your custom built-in kitchen online. Choose cabinet sizes, countertops, door finishes and get an instant indicative quote — then submit directly to our team.
+          </p>
+          <button onClick={onStart} style={{ background:"#D96339", color:"#FFFFFF", border:"none", borderRadius:6, padding:"14px 40px", fontSize:13, fontWeight:"bold", letterSpacing:2, textTransform:"uppercase", cursor:"pointer", fontFamily:"inherit", boxShadow:"0 4px 24px rgba(217,99,57,0.45)", transition:"transform 0.15s" }}
+            onMouseEnter={e=>e.currentTarget.style.transform="scale(1.04)"}
+            onMouseLeave={e=>e.currentTarget.style.transform="scale(1)"}>
+            Start Designing →
+          </button>
+          <p style={{ marginTop:12, fontSize:10, color:"rgba(200,184,168,0.6)", letterSpacing:1 }}>FREE · No account required · Takes 2–5 minutes</p>
+        </div>
+      </div>
+
+      {/* How to use */}
+      <div style={{ flex:1, padding:"44px 24px 48px", maxWidth:900, margin:"0 auto", width:"100%" }}>
+        <div style={{ textAlign:"center", marginBottom:36 }}>
+          <div style={{ fontSize:9, letterSpacing:4, color:"#D96339", textTransform:"uppercase", marginBottom:8 }}>How it works</div>
+          <h2 style={{ fontSize:"clamp(16px,3vw,22px)", color:"#2A1D16", fontWeight:"bold", letterSpacing:0.5 }}>
+            Five steps to your perfect kitchen
+          </h2>
+        </div>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))", gap:20 }}>
+          {steps.map(s => (
+            <div key={s.num} style={{ background:"#FAFAF7", border:"1px solid #E0D8CE", borderRadius:10, padding:"22px 20px", position:"relative", overflow:"hidden" }}>
+              <div style={{ position:"absolute", top:14, right:16, fontSize:32, opacity:0.07, fontWeight:"bold", color:"#2A1D16", letterSpacing:-1 }}>{s.num}</div>
+              <div style={{ fontSize:26, marginBottom:10 }}>{s.icon}</div>
+              <div style={{ fontSize:11, fontWeight:"bold", color:"#2A1D16", letterSpacing:0.5, marginBottom:6 }}>{s.title}</div>
+              <div style={{ fontSize:11, color:"#7A6658", lineHeight:1.7 }}>{s.body}</div>
+            </div>
+          ))}
+          {/* CTA card */}
+          <div style={{ background:"#D96339", borderRadius:10, padding:"22px 20px", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", textAlign:"center" }}>
+            <div style={{ fontSize:26, marginBottom:10 }}>🏠</div>
+            <div style={{ fontSize:11, fontWeight:"bold", color:"#FFFFFF", letterSpacing:0.5, marginBottom:10 }}>Ready to design?</div>
+            <button onClick={onStart} style={{ background:"#FFFFFF", color:"#D96339", border:"none", borderRadius:5, padding:"10px 24px", fontSize:11, fontWeight:"bold", letterSpacing:1.5, textTransform:"uppercase", cursor:"pointer", fontFamily:"inherit" }}>
+              Open Configurator
+            </button>
+          </div>
+        </div>
+
+        {/* Feature pills */}
+        <div style={{ display:"flex", flexWrap:"wrap", gap:10, justifyContent:"center", marginTop:36 }}>
+          {["37 Quartz colours","10 Formica surfaces","4 Marble options","Supamatt · Supagloss · Wood Grain doors","750 → 900mm unit widths","Soft-close hardware only","Appliance placeholders","Instant indicative quote"].map(f => (
+            <span key={f} style={{ background:"#EDE6DC", color:"#5A4A3A", fontSize:10, padding:"5px 12px", borderRadius:20, letterSpacing:0.5 }}>{f}</span>
+          ))}
+        </div>
+      </div>
+
+      <HWHFooter/>
+    </div>
+  );
+}
+
 // ─── Cabinet SVG ──────────────────────────────────────────────────────────────
 function CabinetSVG({ unit, pxPerMm, selected, ctColour }) {
   const W           = unit.width  * pxPerMm;
@@ -1202,7 +1386,7 @@ function StepIndicator({ phase, setPhase }) {
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
 export default function App() {
-  const [phase,    setPhase]    = useState("layout");
+  const [phase,    setPhase]    = useState("landing");
   const [units,    setUnits]    = useState([]);
   const [selected, setSelected] = useState(null);
   const [drag,     setDrag]     = useState(null);
@@ -1484,6 +1668,8 @@ export default function App() {
       setCName(""); setCEmail(""); setCPhone("");
     }, 4000);
   }
+
+  if (phase === "landing") return <LandingPage onStart={() => setPhase("layout")}/>;
 
   return (
     <div style={{ height:"100vh", background:C.darkbg, fontFamily:"'Trebuchet MS',sans-serif", color:C.text, display:"flex", flexDirection:"column", overflow:"hidden" }}>
